@@ -3,6 +3,7 @@ import { fetchWeather } from "./api"
 import { setWeather } from "./weatherSlice"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
+import './App.css'
   
   export default function App() {
     const [textboxvalue, setTextBoxValue] = useState("")
@@ -25,10 +26,11 @@ import { RootState } from "./store";
 
     return (
       <>
+      <div className="app-container">
         <h1>Weather App</h1>
-        <input placeholder = "Type" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)}></input> 
-        <button onClick={() => Search(textboxvalue)}>Search</button>
-        <div>
+        <input placeholder = "Type" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)} className="input-box"></input> 
+        <button onClick={() => Search(textboxvalue)} className="search-button">Search</button>
+        <div className="weather-display">
           {city ? (
             <>
               <h2>Weather in {city}</h2>
@@ -37,9 +39,10 @@ import { RootState } from "./store";
               {icon && condition && <img src={icon} alt={condition} />}
             </>
           ) : (
-            <p>Please search for a city to see the weather.</p>
+            <p>Search for a city to see the weather.</p>
           )}
-    </div>
+        </div>
+      </div>
       </>
     )
   }
