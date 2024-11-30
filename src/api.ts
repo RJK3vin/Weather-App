@@ -14,6 +14,7 @@ export const fetchWeather = async (city: string) => {
       console.log('WeatherAPI Response:', response.data);
       return response.data;
     } catch (error) {
+        alert("Invalid")
       console.error('Error fetching weather:', error);
       throw error;
     }
