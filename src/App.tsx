@@ -1,11 +1,20 @@
+import { useState } from "react"
+import { fetchWeather } from "./api"
 
-function App() {
 
-  return (
-    <>
-      <p>Hi</p>
-    </>
-  )
-}
+  
+  export default function App() {
+    const [textboxvalue, setTextBoxValue] = useState('')
 
-export default App
+    function Search() {
+      fetchWeather(textboxvalue)
+    }
+
+    return (
+      <>
+        <p>Search for cities</p>
+        <input placeholder = "Type" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)}></input> 
+        <button onClick={Search}>Search</button>
+      </>
+    )
+  }
