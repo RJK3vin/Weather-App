@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { fetchWeather } from "./api"
-import { setWeather } from "./weatherSlice"
+import { addFavoriteCity, setWeather } from "./weatherSlice"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
 import './App.css'
-  
+import { Link } from 'react-router-dom';
+
   export default function App() {
     const [textboxvalue, setTextBoxValue] = useState("")
     const dispatch = useDispatch();
@@ -37,10 +38,17 @@ import './App.css'
               <p>Temperature: {temperature}°C</p>
               <p>Condition: {condition}</p>
               {icon && condition && <img src={icon} alt={condition} />}
+              <br></br>
+              <button onClick={() => dispatch(addFavoriteCity(city))}className="search-button">Add to favorite city</button>
+              <br></br>
+              <br></br>
             </>
           ) : (
             <p>Search for a city to see the weather.</p>
           )}
+          <Link to = "/favorites">
+            <button className="search-button">Go to favorite cities</button>
+          </Link>
         </div>
       </div>
       </>

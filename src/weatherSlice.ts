@@ -5,6 +5,7 @@ interface WeatherState {
   temperature: number | null;
   condition: string | null;
   icon: string | null;
+  favoriteCities: String[]
 }
 
 const initialState: WeatherState = {
@@ -12,6 +13,7 @@ const initialState: WeatherState = {
   temperature: null,
   condition: null,
   icon: null,
+  favoriteCities: []
 };
 
 const weatherSlice = createSlice({
@@ -24,8 +26,13 @@ const weatherSlice = createSlice({
       state.condition = action.payload.condition ?? state.condition;
       state.icon = action.payload.icon ?? state.icon;
     },
+    addFavoriteCity: (state, action: PayloadAction<string>) => {
+      if (!state.favoriteCities.includes(action.payload)) {
+        state.favoriteCities.push(action.payload)
+      }
+    }
   },
 });
 
-export const { setWeather } = weatherSlice.actions;
+export const { setWeather, addFavoriteCity } = weatherSlice.actions;
 export default weatherSlice.reducer;
