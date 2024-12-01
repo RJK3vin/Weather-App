@@ -115,3 +115,41 @@ body, html {
   90% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+.favorite-city-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px; 
+}
+
+.favorite-city-name {
+  font-size: 1rem;
+  color: #333;
+  list-style: none; 
+}
+
+.remove-button {
+  padding: 5px 15px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+.remove-button:active {
+  transform: scale(0.95);
+}

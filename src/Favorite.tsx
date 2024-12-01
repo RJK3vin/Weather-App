@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import './App.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './store';
+import { removeFavorityCity } from './weatherSlice';
 
 export default function Favorite() {
 
     const favoriteCites = useSelector((state : RootState) => state.weather.favoriteCities)
+    const dispatch = useDispatch();
+    const removeCity = (city : string) => {
+        dispatch(removeFavorityCity(city))
+    }
 
     return (
         <>
@@ -14,7 +19,12 @@ export default function Favorite() {
             {favoriteCites.length > 0 ? (
                 <ul>
                     {favoriteCites.map((city, index) => (
-                        <li key = {index}>{city}</li>
+                        <>
+                            <div className="favorite-city-container" key={index}>
+                                <li className="favorite-city-name">{city}</li>
+                                <button className="remove-button" onClick={() => removeCity(city)}>Remove from favorite cities</button>
+                            </div>
+                        </>
                     ))}
                 </ul>
             ) : (

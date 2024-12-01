@@ -5,7 +5,7 @@ interface WeatherState {
   temperature: number | null;
   condition: string | null;
   icon: string | null;
-  favoriteCities: String[]
+  favoriteCities: string[]
   forecast: Array<{
     date : string;
     high : number;
@@ -25,10 +25,6 @@ export interface ForecastDay {
       icon: string;
     };
   };
-}
-
-export interface ForecastData {
-  forecastday: ForecastDay[];
 }
 
 const initialState: WeatherState = {
@@ -55,11 +51,16 @@ const weatherSlice = createSlice({
         state.favoriteCities.push(action.payload)
       }
     },
+    removeFavorityCity: (state, action: PayloadAction<string>) => {
+      state.favoriteCities = state.favoriteCities.filter(
+        (city) => city !== action.payload
+      )
+    },
     setForeCast(state, action: PayloadAction<WeatherState['forecast']>) {
       state.forecast = action.payload;
     }
   },
 });
 
-export const { setWeather, addFavoriteCity, setForeCast } = weatherSlice.actions;
+export const { setWeather, addFavoriteCity, removeFavorityCity, setForeCast } = weatherSlice.actions;
 export default weatherSlice.reducer;
