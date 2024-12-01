@@ -6,6 +6,29 @@ interface WeatherState {
   condition: string | null;
   icon: string | null;
   favoriteCities: String[]
+  forecast: Array<{
+    date : string;
+    high : number;
+    low : number;
+    condition : string;
+    icon : string;
+  }>;
+}
+
+export interface ForecastDay {
+  date: string;
+  day: {
+    maxtemp_f: number;
+    mintemp_f: number;
+    condition: {
+      text: string;
+      icon: string;
+    };
+  };
+}
+
+export interface ForecastData {
+  forecastday: ForecastDay[];
 }
 
 const initialState: WeatherState = {
@@ -13,7 +36,8 @@ const initialState: WeatherState = {
   temperature: null,
   condition: null,
   icon: null,
-  favoriteCities: []
+  favoriteCities: [],
+  forecast: [],
 };
 
 const weatherSlice = createSlice({
@@ -30,9 +54,12 @@ const weatherSlice = createSlice({
       if (!state.favoriteCities.includes(action.payload)) {
         state.favoriteCities.push(action.payload)
       }
+    },
+    setForeCast(state, action: PayloadAction<WeatherState['forecast']>) {
+      state.forecast = action.payload;
     }
   },
 });
 
-export const { setWeather, addFavoriteCity } = weatherSlice.actions;
+export const { setWeather, addFavoriteCity, setForeCast } = weatherSlice.actions;
 export default weatherSlice.reducer;
