@@ -8,7 +8,7 @@ Organization Information: Product Manager Accelerator is designed to support PM 
 
 This project was to learn redux and axios to manage state
 
-[Watch demo of project which includes a preview of  the API](https://drive.google.com/file/d/14-nKnsj2C4cFzj9EgsXLMVYrZJCEuFLi/view?usp=sharing)
+[Watch demo of project which includes a preview of the API](https://drive.google.com/file/d/1t2ePo7XElA-aGJH9ykrGKzmePsNhSYE8/view?usp=sharing)
 
 - Implemented city search, weather information, 5-day forecast, and favorite cities features
 - Managed state for weather data and favorite cities with Redux, react-router for navigation, and Axios for data fetching

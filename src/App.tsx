@@ -50,7 +50,7 @@ import Toast from './toast';
       <>
       <div className="app-container">
         <h1>Weather App</h1>
-        <input placeholder = "Search for a city" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)} className="input-box"></input> 
+        <input placeholder = "Type" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)} className="input-box"></input> 
         <button onClick={() => Search(textboxvalue)} className="search-button">Search</button>
         <div className="weather-display">
           {city ? (
