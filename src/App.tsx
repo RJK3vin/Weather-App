@@ -50,7 +50,7 @@ import Toast from './toast';
       <>
       <div className="app-container">
         <h1>Weather App</h1>
-        <input placeholder = "Type" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)} className="input-box"></input> 
+        <input placeholder = "Search for a city" value = {textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)} className="input-box"></input> 
         <button onClick={() => Search(textboxvalue)} className="search-button">Search</button>
         <div className="weather-display">
           {city ? (
@@ -84,6 +84,14 @@ import Toast from './toast';
           </Link>
         </div>
         <Toast message = "City added to favorites!" show={showToast}/>
+        <div className="bottom-info">
+          <p>Developer: Kevin Ritthaworn</p>
+          <p>Submission for: PM Accelerator Tech Assessment #1</p>
+          <p>Organization Information: Product Manager Accelerator is designed to support PM professionals through every stage 
+             from entry-level to VP. This program offers services like AI PM bootcamps, leadership coaching, and resume review. 
+             For more information go to <a href="https://www.linkedin.com/company/pmaccelerator/">Product Manager Accelerator on Linkedln</a>
+          </p>
+        </div>
       </div>
       </>
     )

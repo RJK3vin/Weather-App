@@ -153,3 +153,16 @@ body, html {
 .remove-button:active {
   transform: scale(0.95);
 }
+
+.bottom-info {
+  margin-top: 40px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+.bottom-info a {
+  color: #0077cc;
+  text-decoration: none;
+}
