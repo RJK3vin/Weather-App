@@ -1,7 +1,9 @@
 # **Weather Dashboard App**
 
 Developer: Kevin Ritthaworn
+
 Submission for: PM Accelerator Tech Assessment #1
+
 Organization Information: Product Manager Accelerator is designed to support PM professionals through every stage from entry-level to VP. This program offers services like AI PM bootcamps, leadership coaching, and resume review. For more information go to [Product Manager Accelerator on Linkedln](https://www.linkedin.com/school/pmaccelerator/)
 
 This project was to learn redux and axios to manage state
